@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 /* Define Paths for Express Config */
 const publicDirectoryPath = express.static(path.join(__dirname, '../public'))
@@ -91,6 +92,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Started in port 3000')
+app.listen(port, () => {
+    console.log('Started in port ' + port)
 })// common development port for local machine
